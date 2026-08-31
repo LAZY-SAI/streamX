@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+
+:root{
+
+    --main-color: #f3f1ea;
+    --ink:#17140f;
+    --red:#d64526;
+    --gray:#b9b4a6;
+    --line:#dcd8cb;
+    --mono: 'Courier New', monospace;
+}
+.body{
+    background-color: var(--main-color);
+}

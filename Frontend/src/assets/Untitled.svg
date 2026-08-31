@@ -1,0 +1,13 @@
+<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Movie Fast Forward Button" clip-path="url(#clip0_0_1)">
+<path id="Vector" opacity="0.6" d="M296 2H24C11.8497 2 2 11.8497 2 24V176C2 188.15 11.8497 198 24 198H296C308.15 198 318 188.15 318 176V24C318 11.8497 308.15 2 296 2Z" stroke="black" stroke-width="2"/>
+<path id="Vector_2" d="M115 70L150 100L115 130V70Z" fill="black"/>
+<path id="Vector_3" d="M150 70L185 100L150 130V70Z" fill="black"/>
+<path id="Vector_4" d="M196 70H192C190.895 70 190 70.8954 190 72V128C190 129.105 190.895 130 192 130H196C197.105 130 198 129.105 198 128V72C198 70.8954 197.105 70 196 70Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="320" height="200" fill="white"/>
+</clipPath>
+</defs>
+</svg>
