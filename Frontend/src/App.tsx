@@ -1,4 +1,4 @@
-import Loading from "./loading"
+  
 import './App.css'
 import { Route, Routes } from "react-router-dom"
 // import Layout from "./layout/layout"
@@ -10,8 +10,8 @@ function App() {
     <>
       <Routes>
        
-        <Route path="/landing" element={<Landing />} />
-         <Route path="/" element={<Loading />} />
+        <Route path="/" element={<Landing />} />
+         
       </Routes>
     </>
   )
