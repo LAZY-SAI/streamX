@@ -11,7 +11,9 @@ export default function Landing() {
   return (
     <Layout>
       {isLoading && (<Loading onComplete={()=> setIsLoading(false)}/>)}
-      
+      <div className="flex ">
+        main page
+      </div>
     </Layout>
   );
 }

@@ -10,6 +10,7 @@
     --line:#dcd8cb;
     --mono: 'Courier New', monospace;
 }
-.body{
+html{
     background-color: var(--main-color);
+    font-language-override: var(--mono);
 }
