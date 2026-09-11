@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import Pixel from "../Pixel";
+import RedPixel from "../RedPixel";
 
 interface NavItem {
   id: number;
@@ -17,7 +18,12 @@ const NAV_ITEMS: NavItem[] = [
 
 const MotionNavLink = motion(NavLink);
 
+
 export default function Nav() {
+  const rollVariants = {
+    rest: { y: "0%" },
+    hover:{y:"-50%"}
+  }
   return (
     <nav
       className="-mt-1 grid border border-black/20 bg-(--main-color) w-full mx-auto font-mono text-sm tracking-wide"
@@ -34,17 +40,27 @@ export default function Nav() {
           initial="rest"
           whileHover="hover"
           animate="rest"
+          whileTap={{scale:1.1}}
           className="group relative flex items-center overflow-hidden border border-black/20 px-5 py-4 uppercase"
         >
-          <Pixel />
+          <Pixel/>
 
-          <motion.span
-            className="relative z-10"
-            variants={{ rest: { color: "#000" }, hover: { color: "#fff" } }}
-            transition={{ duration: 0.2 }}
-          >
-            {item.name}
-          </motion.span>
+          
+          
+          <span className="relative z-10 h-5 overflow-hidden ">
+            <motion.span
+              className="flex flex-col "
+              variants={rollVariants}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              
+              
+              
+            >
+              <span className="text-black leading-5">{item.name}</span>
+              <span className="text-white leading-5">{item.name}</span>
+            </motion.span>
+            
+        </span>
 
           <span
             aria-hidden
@@ -53,14 +69,38 @@ export default function Nav() {
           />
         </MotionNavLink>
       ))}
-
-      <NavLink
-        to="/contact"
-        className="flex items-center justify-between gap-2 border-l border-black/20 px-5 py-4 text-orange-600"
+{/*
+      contact section*/}
+        
+      <MotionNavLink
+        to={"/contact"}
+        initial="rest"
+        whileHover="hover"
+        animate="rest"
+        whileTap={{scale:1.1}}
+        className="group relative flex items-center justify-between gap-2 overflow-hidden border-l border-black/20 px-5 py-4 text-orange-600"
       >
-        contact us
-        <span aria-hidden>→</span>
-      </NavLink>
+        
+        <RedPixel/>
+        <span className="relative z-10 h-5 overflow-hidden">
+          <motion.span
+            className="flex flex-col"
+           variants={rollVariants}
+             transition={{ duration: 0.3, ease: "easeInOut" }}
+            
+            
+          >
+            <span className="text-red-600 leading-5">
+              contact us
+              <span aria-hidden>→</span>
+            </span>
+            <span className="text-white">
+              contact us
+              <span aria-hidden>→</span>
+            </span>
+          </motion.span>
+        </span>
+     </MotionNavLink>
     </nav>
   );
 }
