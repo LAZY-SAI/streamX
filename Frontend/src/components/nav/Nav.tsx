@@ -18,16 +18,17 @@ const NAV_ITEMS: NavItem[] = [
 
 const MotionNavLink = motion(NavLink);
 
-
 export default function Nav() {
   const rollVariants = {
     rest: { y: "0%" },
-    hover:{y:"-50%"}
-  }
+    hover: { y: "-50%" },
+  };
   return (
     <nav
       className="-mt-1 grid border border-black/20 bg-(--main-color) w-full mx-auto font-mono text-sm tracking-wide"
-      style={{ gridTemplateColumns: `4fr repeat(${NAV_ITEMS.length}, 1fr) 1fr ` }}
+      style={{
+        gridTemplateColumns: `4fr repeat(${NAV_ITEMS.length}, 1fr) 1fr `,
+      }}
     >
       <div className="flex items-center gap-2 px-5 py-4 ">
         <span className=" text-lg tracking-normal">StreamX</span>
@@ -40,27 +41,21 @@ export default function Nav() {
           initial="rest"
           whileHover="hover"
           animate="rest"
-          whileTap={{scale:1.1}}
+          whileTap={{ scale: 1.1 }}
           className="group relative flex items-center overflow-hidden border border-black/20 px-5 py-4 uppercase"
         >
-          <Pixel/>
+          <Pixel />
 
-          
-          
           <span className="relative z-10 h-5 overflow-hidden ">
             <motion.span
               className="flex flex-col "
               variants={rollVariants}
               transition={{ duration: 0.3, ease: "easeInOut" }}
-              
-              
-              
             >
               <span className="text-black leading-5">{item.name}</span>
               <span className="text-white leading-5">{item.name}</span>
             </motion.span>
-            
-        </span>
+          </span>
 
           <span
             aria-hidden
@@ -69,26 +64,23 @@ export default function Nav() {
           />
         </MotionNavLink>
       ))}
-{/*
+      {/*
       contact section*/}
-        
+
       <MotionNavLink
         to={"/contact"}
         initial="rest"
         whileHover="hover"
         animate="rest"
-        whileTap={{scale:1.1}}
+        whileTap={{ scale: 1.1 }}
         className="group relative flex items-center justify-between gap-2 overflow-hidden border-l border-black/20 px-5 py-4 text-orange-600"
       >
-        
-        <RedPixel/>
+        <RedPixel />
         <span className="relative z-10 h-5 overflow-hidden">
           <motion.span
             className="flex flex-col"
-           variants={rollVariants}
-             transition={{ duration: 0.3, ease: "easeInOut" }}
-            
-            
+            variants={rollVariants}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             <span className="text-red-600 leading-5">
               contact us
@@ -100,7 +92,7 @@ export default function Nav() {
             </span>
           </motion.span>
         </span>
-     </MotionNavLink>
+      </MotionNavLink>
     </nav>
   );
 }
